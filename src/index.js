@@ -4,12 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './components/Homepage';
+import ImageDrop from './components/ImageDrop';
+import './App.css';
+import ImageSection from './components/ImageSection';
+import Navbar from './components/Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Homepage/>
+    <Navbar/>
+    <ImageSection/>
+    {/* <App/> */}
+    {/* <Homepage/> */}
   </React.StrictMode>
 );
 
