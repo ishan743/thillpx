@@ -8,7 +8,7 @@
 
 // //   const formData = new FormData();
 // //   formData.append("file", image);
-  
+
 // //   fetch("http://localhost:8000/api/uploadImage", {
 // //     method: "POST",
 // //     body: formData,
@@ -59,7 +59,6 @@
 //     const file = event.target.files[0];
 //     setImage(file);
 
-
 //     // const reader = new FileReader();
 //     // reader.onload = () => {
 //     //   setImage(file);
@@ -105,12 +104,11 @@
 
 // export default ImageDrop;
 
-
-
 import React, { useState } from "react";
 
 function ImageUpload() {
   const [file, setFile] = useState(null);
+  const [testUrl, setTestUrl] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -118,11 +116,12 @@ function ImageUpload() {
 
   const handleFileUpload = (event) => {
     event.preventDefault();
+    let link = document.getElementById("inpLink").value;
 
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("http://localhost:8000/api/uploadImage", {
+    fetch(`http://localhost:8000/api/uploadImage?link=${link}`, {
       method: "POST",
       body: formData,
     })
@@ -138,7 +137,13 @@ function ImageUpload() {
     <div>
       <form onSubmit={handleFileUpload}>
         <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload Image</button>
+        <input
+          type={"text"}
+          id="inpLink"
+          width={"100%"}
+          placeholder={"enter url"}
+        />
+        <button type="submit">Upload and Compare Results</button>
       </form>
     </div>
   );
