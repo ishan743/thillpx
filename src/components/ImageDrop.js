@@ -111,13 +111,13 @@ function ImageUpload() {
   const [testUrl, setTestUrl] = useState(null);
 
   const handleFileChange = (event) => {
+    console.log("handle file change executed");
     setFile(event.target.files[0]);
   };
 
   const handleFileUpload = (event) => {
     event.preventDefault();
     let link = document.getElementById("inpLink").value;
-
     const formData = new FormData();
     formData.append("file", file);
 
@@ -135,15 +135,31 @@ function ImageUpload() {
 
   return (
     <div>
-      <form onSubmit={handleFileUpload}>
-        <input type="file" onChange={handleFileChange} />
-        <input
-          type={"text"}
-          id="inpLink"
-          width={"100%"}
-          placeholder={"enter url"}
-        />
-        <button type="submit">Upload and Compare Results</button>
+      <form id="inpForm" onSubmit={handleFileUpload}>
+        <div className="row">
+          <div className="column">
+            <p>upload figma image</p>
+            {/* <label for="inputTag"> */}
+              {/* Select Image */}
+            <input id="inputTag" type="file" onChange={handleFileChange} required />
+              {/* <input id="inputTag" type="file" /> */}
+            {/* </label> */}
+          </div>
+          <div className="column">
+            <p>upload test image url</p>
+            <input
+              type={"text"}
+              id="inpLink"
+              width={"100%"}
+              placeholder={"Enter Url"}
+              required
+            />
+          </div>
+          <div className="column">
+
+            <button type="submit">Upload and Compare Results</button>
+          </div>
+        </div>
       </form>
     </div>
   );

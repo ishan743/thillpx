@@ -8,14 +8,17 @@ import ImageDrop from './components/ImageDrop';
 import './App.css';
 import ImageSection from './components/ImageSection';
 import Navbar from './components/Navbar';
+import DisplayImage from './components/DisplayImage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Navbar/>
-    <ImageSection/>
+
+    {/* <ImageSection/> */}
     {/* <App/> */}
-    {/* <Homepage/> */}
+    <Homepage/>
+
   </React.StrictMode>
 );
 
