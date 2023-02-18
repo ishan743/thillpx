@@ -2,11 +2,19 @@ import React, { useState } from "react";
 
 function ImageUpload() {
   const [file, setFile] = useState(null);
+  const [imageurl, setimageurl] = useState(
+    "https://cdn.pixabay.com/photo/2022/01/11/21/48/link-6931554_1280.png"
+  );
+  const [secondImage, setsecondImage] = useState(
+    "https://cdn.pixabay.com/photo/2022/01/11/21/48/link-6931554_1280.png"
+  );
   const [testUrl, setTestUrl] = useState(null);
 
   const handleFileChange = (event) => {
     console.log("handle file change executed");
     setFile(event.target.files[0]);
+    const url = URL.createObjectURL(event.target.files[0]);
+    setimageurl(url);
   };
 
   const handleFileUpload = (event) => {
@@ -28,7 +36,11 @@ function ImageUpload() {
         }
       )
       .then((res) => {
-        console.log({ res });
+        // console.log({ res });
+        // console.log("res testimage:" + res.testImage);
+        // setsecondImage(res.testImage);
+        console.log(res.results.testImage);
+        console.log(typeof res.results.testImage);
       });
   };
 
@@ -62,6 +74,12 @@ function ImageUpload() {
           </div>
         </div>
       </form>
+      <div>
+        <div className="image-container">
+          <img src={imageurl} className="image-column" />
+          <img src={secondImage} className="image-column" />
+        </div>
+      </div>
     </div>
   );
 }
