@@ -125,24 +125,34 @@ function ImageUpload() {
       method: "POST",
       body: formData,
     })
-      .then((response) => {
-        console.log("Image uploaded successfully");
-      })
-      .catch((error) => {
-        console.error("Error uploading image", error);
+      .then(
+        (response) => {
+          return response.json();
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+      .then((res) => {
+        console.log({ res });
       });
   };
 
   return (
-    <div>
+    <div className="body">
       <form id="inpForm" onSubmit={handleFileUpload}>
         <div className="row">
           <div className="column">
             <p>upload figma image</p>
             {/* <label for="inputTag"> */}
-              {/* Select Image */}
-            <input id="inputTag" type="file" onChange={handleFileChange} required />
-              {/* <input id="inputTag" type="file" /> */}
+            {/* Select Image */}
+            <input
+              id="inputTag"
+              type="file"
+              onChange={handleFileChange}
+              required
+            />
+            {/* <input id="inputTag" type="file" /> */}
             {/* </label> */}
           </div>
           <div className="column">
@@ -156,7 +166,6 @@ function ImageUpload() {
             />
           </div>
           <div className="column">
-
             <button type="submit">Upload and Compare Results</button>
           </div>
         </div>

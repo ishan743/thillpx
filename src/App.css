@@ -1,44 +1,44 @@
-*{
+* {
   margin: 0px;
   padding: 0;
 }
-.row ,.image-container{
+.row,
+.image-container {
   text-align: center;
   display: flex;
   text-transform: capitalize;
   justify-content: center;
 }
 
-#main{
+#main {
   margin-top: 80px;
 }
-#inpLink{
+#inpLink {
   height: 30px;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
   font-size: 20px;
 }
-#main h1{
+#main h1 {
   text-align: center;
   margin: 20px 0px;
 }
 #main button {
- height: 40px;
- width: 300px;
+  height: 40px;
+  width: 300px;
   margin-top: 65px;
   border-radius: 10px;
   cursor: pointer;
-
 }
-.column p{
+.column p {
   margin: 20px 0px;
 }
-h3{
+h3 {
   text-align: center;
   margin: 60px 0px;
 }
-label{
+label {
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
@@ -50,7 +50,7 @@ input[type="text"] {
   border-radius: 30px !important;
   height: 23px !important;
 }
-.image-column{
+.image-column {
   width: 40%;
   margin: 0px 10px;
   cursor: pointer;
@@ -82,7 +82,7 @@ nav {
   align-items: center;
   padding: 20px;
   background-color: white;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1); */
   position: fixed;
   top: 0;
   height: 20px;
@@ -98,7 +98,8 @@ nav {
   color: #ff5a5f;
   width: 120px;
 }
-#main  button ,.column input {
+#main button,
+.column input {
   display: inline-block;
   background-color: #ffffff;
   /* background-color: black; */
@@ -112,13 +113,12 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-#main button:hover, .column input {
+#main button:hover,
+.column input {
   /* background-color: #f7f7f7; */
   /* border-radius: 40px; */
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
 }
-
 
 .nav-links {
   display: flex;
@@ -150,4 +150,13 @@ nav {
 
 .nav-button:hover {
   background-color: #e6494d;
+}
+
+body {
+  background: rgb(252, 210, 141);
+  background: linear-gradient(
+    0deg,
+    rgba(252, 210, 141, 1) 0%,
+    rgba(255, 255, 255, 1) 77%
+  );
 }
