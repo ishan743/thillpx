@@ -9,10 +9,9 @@ export default function Homepage() {
 
   return (
     <div id="main">
-      <h1>Heading !</h1>
-        <ImageDrop/>
-        <DisplayImage/>
-        <Result/>
+      <ImageDrop />
+      <DisplayImage />
+      <Result />
     </div>
   );
 }
