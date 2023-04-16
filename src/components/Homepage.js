@@ -7,8 +7,6 @@ export default function Homepage() {
   return (
     <div id="main">
       <ImageDrop />
-
-      <Result />
     </div>
   );
 }
